@@ -236,7 +236,7 @@ $\beta=F(\alpha)$ is the image of a curve $\alpha$, then $\beta'=F_*(\alpha')$.
 
 ### 7.9 Definition
 
-A mapping $F$ is regular if at every point $p$ $F_{*p}$ is 1-1.
+A mapping $F$ is regular if $F_{*p}$ is 1-1 at every point $p$ .
 
 ### 7.10 Theorem
 
@@ -544,4 +544,167 @@ orientation-reversing if $\operatorname{sgn}F=-1$
 - (3) Reflections
 
 ### 3.5 Lemma
+
+Let $e_1,e_2,e_3$ be a frame at a point. $v=\sum v_ie_i$, $w=\sum w_ie_i$.
+
+Then $v\times w=(e_1\cdot e_2\times e_3)
+\begin{vmatrix}
+e_1 & e_2 & e_3 \\
+v_1 & v_2 & v_3 \\
+w_1 & w_2 & w_2 \\
+\end{vmatrix}$
+
+### 3.6 Theorem
+
+$v,w\in T_p\mathbb{R}^3$.
+
+If $F$ is an isometry, then $F_*(v\times w)=(\operatorname{sgn}F)F_*(v)\times F_*(w)$.
+
+
+
+## 3.4 Euclidean Geometry
+
+### 4.1 Corollary
+
+Let $Y$ be a vector field on a curve $\alpha$, and let $F$ be an isometry.
+
+Then $\overline{Y}=F_*(Y)$ is a vector field on $\overline{\alpha}=F(\alpha)$, and $\overline{Y}'=F_*(Y')$.
+
+### 4.2 Theorem
+
+Let $\beta$ be a unit-speed curve with $\kappa>0$, and let $\overline{\beta}=F(\beta)$ be the image curve
+
+under an isometry $F$.
+
+//
+
+
+
+
+
+# 4. Calculus on a Surface
+
+### 1.1 Definition
+
+A coordinate patch $x:D\to\mathbb{R}^3$ is a 1-1 regular mapping of an open set $D$ of $\mathbb{R}^2$.
+
+### Book
+
+A proper patch is a coordinate patch that the inverse is continuous.
+
+### 1.2 Definition
+
+A surface in $\mathbb{R}^3$ is a subset $M$ such that for each $p\in M$ there exists a proper patch in $M$ whose image contains a neighborhood of $p$ in $M$.
+
+### 1.3 Example
+
+- differentiable real-valued function on $\mathbb{R}^2$
+
+### 1.4 Theorem
+
+Let $g$ be a differentiable real-valued function on $\mathbb{R}^3$, $c\in\mathbb{R}$.
+
+$M:g(x,y,z)=c$ is a surface if the differential $dg$ is not zero at any point of $M$.
+
+### 1.5 Example
+
+Surfaces of revolution.
+
+### 1.6 Example
+
+//
+
+
+
+## 4.2 Patch Computations
+
+### 2.1 Definition
+
+If $x:D\to\mathbb{R}^3$ is patch, for each point $(u_0,v_0)\in D$:
+
+- (1) The velocity vector at $u_0$ of the $u$-parameter curve, $v=v_0$ is denoted by $x_u(u_0,v_0)$
+- (2) The velocity vector at $v_0$ of the $v$-parameter curve, $u=u_0$ is denoted by $x_v(u_0,v_0)$
+
+$x_u(u_0,v_0),x_v(u_0,v_0)$ are called the partial velocities of $x$ at $(u_0,v_0)$.
+
+### 2.2 Example
+
+The geographical patch in the sphere.
+
+### 2.3 Definition
+
+A regular mapping $x:D\to\mathbb{R}^3$ whose image lies in a surface $M$ is called
+
+a parametrization of the region $x(D)$ in $M$.
+
+### 2.4 Example
+
+Parametrization of a surface of revolution.
+
+### 2.5 Example
+
+Torus of revolution $T$.
+
+### 2.6 Definition
+
+A ruled surface
+
+$x(u,v)=\beta(u)+v\delta(u)$.
+
+
+
+## 4.3 Differentiable Functions and Tangent Vectors
+
+### Book
+
+For a function $F:\mathbb{R}^n\to M$, each patch $x$ in $M$ gives a coordinate expression $x^{-1}(F)$ for $F$.
+
+$F$ is differentiable if all its coordinate expressions are differentiable.
+
+### 3.1 Lemma
+
+If $\alpha:I\to M$ is a curve whose image lies in $x(D)$ of a single patch $x$,
+
+then there exists unique differentiable functions $a_1,a_2$ on $I$ such that
+
+$\alpha(t)=x(a_1(t),a_2(t))$.
+
+the coordinate functions of the curve $\alpha$ with respect to $x$.
+
+### 3.2 Theorem
+
+Let $M$ be a surface. If $F:\mathbb{R}^n\to\mathbb{R}^3$ is a mapping whose image lies in $M$,
+
+then $F:\mathbb{R}^n\to M$ is differentiable.
+
+### 3.3 Corollary
+
+If $x,y$ are patches in $M$ whose images overlap, $x^{-1}y$ and $y^{-1}x$ are mappings.
+
+### 3.4 Corollary
+
+If $x,y$ are overlapping patches in $M$, then there exist unique differentiable functions $\overline{u},\overline{v}$
+
+such that $y(u,v)=x(\overline{u}(u,v),\overline{v}(u,v))$.
+
+### 3.5 Definition
+
+Let $p\in M$. $v\in T_p\mathbb{R}^3$ is tangent to $M$ at $p$ if $v$ is a velocity of some curve in $M$.
+
+### 3.6 Lemma
+
+Let $p\in M$, and let $x$ be a patch such that $x(u_0,v_0)=p$. $v\in T_p\mathbb{R}^3$ is tangent to $M$
+
+iff $v$ is a linear combination of $x_u(u_0,v_0)$ and $x_v(u_0,v_0)$.
+
+### 3.7 Definition
+
+A vector field $Z$ on $M$ is a function on $M$ such that $Z(p)\in T_p\mathbb{R}^3$.
+
+A vector field $V$ is called a tangent vector field on $M$ if $V(p)\in T_pM$.
+
+- a tangent vector field on $M$
+- a normal vector field on $M$
+
+### 3.8 Lemma
 
