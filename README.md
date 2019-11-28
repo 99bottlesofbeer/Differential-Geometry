@@ -620,12 +620,12 @@ Surfaces of revolution.
 
 ### 2.1 Definition
 
-If $x:D\to\mathbb{R}^3$ is patch, for each point $(u_0,v_0)\in D$:
+If $\mathbf{x}:D\to\mathbb{R}^3$ is patch, for each point $(u_0,v_0)\in D$:
 
-- (1) The velocity vector at $u_0$ of the $u$-parameter curve, $v=v_0$ is denoted by $x_u(u_0,v_0)$
-- (2) The velocity vector at $v_0$ of the $v$-parameter curve, $u=u_0$ is denoted by $x_v(u_0,v_0)$
+- (1) The velocity vector at $u_0$ of the $u$-parameter curve, $v=v_0$ is denoted by $\mathbf{x}_u(u_0,v_0)$
+- (2) The velocity vector at $v_0$ of the $v$-parameter curve, $u=u_0$ is denoted by $\mathbf{x}_v(u_0,v_0)$
 
-$x_u(u_0,v_0),x_v(u_0,v_0)$ are called the partial velocities of $x$ at $(u_0,v_0)$.
+$\mathbf{x}_u(u_0,v_0),\mathbf{x}_v(u_0,v_0)$ are called the partial velocities of $\mathbf{x}$ at $(u_0,v_0)$.
 
 ### 2.2 Example
 
@@ -633,9 +633,9 @@ The geographical patch in the sphere.
 
 ### 2.3 Definition
 
-A regular mapping $x:D\to\mathbb{R}^3$ whose image lies in a surface $M$ is called
+A regular mapping $\mathbf{x}:D\to\mathbb{R}^3$ whose image lies in a surface $M$ is called
 
-a parametrization of the region $x(D)$ in $M$.
+a parametrization of the region $\mathbf{x}(D)$ in $M$.
 
 ### 2.4 Example
 
@@ -708,3 +708,372 @@ A vector field $V$ is called a tangent vector field on $M$ if $V(p)\in T_pM$.
 
 ### 3.8 Lemma
 
+If $M:g=c$ is a surface in $\mathbb{R}^3$, then the gradient vector field $\nabla g=\sum{\partial g\over\partial x_i}U_i$ is a non-vanishing normal vector field on the entire surface $M$.
+
+### 3.9 Example
+
+$S:g=\sum {x_i}^2=r^2$
+
+$\nabla g=\sum 2x_iU_i$
+
+### 3.10 Definition
+
+Let $v\in T_pM$, and let $f$ be a differentiable real-valued function on $M$.
+
+The derivative $v[f]$ of $f$ with respect to $v$ is $({d\over dt})(f\alpha)(0)$ for all curves $\alpha$ in $M$ with initial velocity $v$.
+
+
+
+## 4.4 Differential Forms on a Surface
+
+### 4.1 Definition
+
+A 2-form $\eta$ on $M$ is a real-valued function on $T(M)\times T(M)$ such that
+
+(1) bi-linear
+
+(2) $\eta(v,w)=-\eta(w,v)$
+
+### 4.2 Lemma
+
+$\eta(av+bw,cv+dw)=(ad-bc)\eta(v,w)$
+
+### 4.3 Definition
+
+If $\phi$ and $\psi$ are 1-forms on $M$, the wedge product $\phi\wedge\psi$ is the 2-form on $M$ such that
+
+$(\phi\wedge\psi)(v,w)=\phi(v)\psi(w)-\phi(w)\psi(v)$.
+
+### 4.4. Definition
+
+Let $\phi$ be a 1-form on $M$. Then the exterior derivative $d\phi$ of $\phi$ is the 2-form such that
+
+for any patch $\mathbf{x}$ in $M$, $d\phi(\mathbf{x}_u,\mathbf{x}_v)
+=d_\mathbf{x}\phi(\mathbf{x}_u,\mathbf{x}_v)
+={\partial\over\partial u}(\phi(\mathbf{x}_v))-{\partial\over\partial v}(\phi(\mathbf{x}_u))$.
+
+### 4.5 Lemma
+
+Let $\phi$ be a 1-form on $M$. If $\mathbf{x}$ and $\mathbf{y}$ are patches in $M$, then $d_\mathbf{x}\phi=d_\mathbf{y}\phi$ on the overlap.
+
+### 4.6 Theorem
+
+If $f$ is a real-valued function on $M$, then $d(df)=0$.
+
+### 4.7 Example
+
+$u_1=u$, $u_2=v$ : the natural coordinate functions
+
+$U_1$, $U_2$ : the natural frame field
+
+$f$ : function
+
+$\phi$ : 1-form
+
+$\eta$ : 2-form
+
+(1) $\phi=f_1du_1+f_2du_2$, where $f_i=\phi(U_i)$.
+
+(2) $\eta=gdu_1du_2$, where $g=\eta(U_1,U_2)$.
+
+(3) $\psi=g_1du_1+g_2du_2$ $\Rightarrow$ $\phi\wedge\psi=(f_1g_2-f_2g_1)du_1du_2$
+
+(4) $df={\partial\over\partial u_1}du_1+{\partial\over\partial u_2}du_2$.
+
+(5) $d\phi=({\partial f_2\over\partial u_1}-{\partial f_1\over\partial u_2})du_1du_2$
+
+### 4.8 Definition
+
+A form $\phi$ is closed if its exterior derivative is zero.
+
+$\phi$ is exact if it is the exterior derivative of some form.
+
+### Book
+
+Every exact form is closed.
+
+## 4.5 Mapping of Surfaces
+
+### 5.1 Definition
+
+A function $F:M\to N$ is differentiable if for each patch $\mathbf{x}$ in $M$ and $\mathbf{y}$ in $N$
+
+$\mathbf{y}^{-1}F\mathbf{x}$ is differentiable.
+
+$F$ is then called a mapping of surfaces.
+
+### 5.2 Example
+
+//
+
+### 5.3 Definition
+
+Let $F:M\to N$ be a mapping of surfaces. The tangent map $F_*:T(M)\to T(N)$ of $F$.
+
+If $\mathbf{v}$ is the initial velocity of $\alpha$ in $M$, then $F_*(\mathbf{v})$ is the initial velocity of $F(\alpha)$ in $N$.
+
+### 5.4 Theorem
+
+Let $F:M\to N$ be a mapping of surfaces, and suppose that $F_{*p}:T_p(M)\to T_{F(p)}(N)$
+
+is a linear isomorphism at $p\in M$.
+
+Then there exists a neighborhood $\mathcal{U}$ of $p$ in $M$ such that the restriction of $F$ to $\mathcal{U}$ is a diffeomorphism
+
+onto a neighborhood $\mathcal{V}$ of $F(p)$ in $N$.
+
+### 5.5 Example
+
+(1) open rectangle is diffeomorphic to the entire plane.
+
+(2) sphere minus one point is diffeomorphic to the entire plane.
+
+(3) //
+
+### 5.6 Definition
+
+Let $F:M\to N$ be a mapping of surfaces.
+
+(1) $\phi$ is a 1-form on $N$, let $F^*\phi$ be the 1-form on $M$ such that
+
+$F^*\phi(\mathbf{v})=\phi(F_*\mathbf{v})$
+
+(2) $\eta$ is a 2-form on $N$, let $F^*\eta$ be the 2-form on $M$ such that
+
+$F^*\eta(\mathbf{v},\mathbf{w})=\eta(F_*\mathbf{v},F_*\mathbf{w})$
+
+### Book
+
+$F^*f=fF$
+
+### 5.7 Theorem
+
+Let $F:M\to N$ be a mapping of surfaces, and let $\xi$ and $\eta$ be forms on $N$.
+
+(1) $F^*(\xi+\eta)=F^*(\xi)+F^*(\eta)$
+
+(2) $F^*(\xi\wedge\eta)=F^*(\xi)\wedge F^*(\eta)$
+
+(3) $F^*(d\xi)=d(F^*\xi)$
+
+
+
+## 4.6 Integration of Forms
+
+//
+
+
+
+## 4.7 Topological Properties of Surfaces
+
+//
+
+
+
+## 4.8 Manifolds
+
+//
+
+
+
+# 5. Shape Operators
+
+## 5.1 The Shape Operator of $M\in\mathbb{R}^3$
+
+### Book
+
+Let $Z$ be a vector field on $M$.
+
+compute $\nabla_\mathbf{v} Z$
+
+#### Method 1.
+
+Let $\alpha$ be a curve in $M$ with $\alpha'(0)=\mathbf{v}$.
+
+$\nabla_vZ=(Z(\alpha))'(0)$.
+
+#### Method 2.
+
+$Z=\sum z_iU_i$
+
+$\nabla_vZ=\sum \mathbf{v}[z_i]U_i$
+
+
+
+### 1.1 Definition
+
+$p\in M$, $\mathbf{v}\in T_pM$
+
+Let $S_p(\mathbf{v})=-\nabla_\mathbf{v}U$ where $U$ is a unit normal vector field on a neighborhood of $p$ in $M$.
+
+$S_p$ is called the shape operator of $M$ at $p$ derived from $U$.
+
+
+
+### 1.2 Lemma
+
+For each $p\in M$, $S_p$ is linear operator
+
+$S_p:T_pM\to T_pM$ on $T_pM$.
+
+
+
+### 1.3 Example
+
+//
+
+
+
+### 1.4 Lemma
+
+For each $p\in M$, $S_p$ is symmetric.
+
+$S(\mathbf{v})\cdot\mathbf{w}=S(\mathbf{w})\cdot\mathbf{v}$
+
+
+
+
+
+## 5.2 Normal Curvature
+
+### 2.1 Lemma
+
+$\alpha$ is a curve in $M$
+
+$\alpha''\cdot U=S(\alpha')\cdot \alpha'$
+
+
+
+### 2.2 Definition
+
+Let $\mathbf{u}\in T_pM$ be a unit vector. 
+
+Then $k(\mathbf{u})=S(\mathbf{u})\cdot\mathbf{u}$ is called the normal curvature of $M$ in the $\mathbf{u}$ direction.
+
+
+
+### Book
+
+Let $\alpha$ be a unit-speed curve in $M$ with $\alpha'(0)=\mathbf{u}$.
+
+$k(\mathbf{u})=S(\mathbf{u})\cdot\mathbf{u}=\alpha''(0)\cdot U(p)=\kappa(0)N(0)\cdot U(p)=\kappa(0)cos\theta$
+
+where $\theta$ is the angle between the principal normal $N(0)$ and the surface normal $U(p)$.
+
+
+
+### 2.3 Definition
+
+Let $p\in M$.
+
+The maximum and minimum values of the normal curvature $k(\mathbf{u})$ are called
+
+the principal curvature of $M$ at $p$, and are denoted by $k_1$ and $k_2$.
+
+principal directions
+
+principal vectors
+
+
+
+### 2.4 Definition
+
+$p\in M$ is umbilic if the normal curvature is constant.
+
+
+
+### 2.5 Theorem
+
+(1) If $p\in M$ is umbilic, then $S_p(\mathbf{v})=k\mathbf{v}$ ($k=k_1=k_2$).
+
+(2) If $p\in M$ is non-umbilic, then there are exactly two principal directions, and these are orthogonal.
+
+If $e_1$ and $e_2$ are principal vectors in these directions, then
+
+$S(e_1)=k_1e_1$, $S(e_2)=k_2e_2$
+
+
+
+### 2.6 Corollary
+
+$\mathbf{u}=\cos(t)e_1+\sin(t)e_2$
+
+$k(\mathbf{u})=k_1\cos^2(t)+k_2\sin^2(t)$
+
+
+
+
+
+## 5.3 Gaussian Curvature
+
+### 3.1 Definition
+
+The Gaussian curvature of $M$ is the real-valued function $K$ on $M$ such that $K(p)=\det S_p$.
+
+The mean curvature of $M$ is $H(p)=1/2\operatorname{trace}S_p$.
+
+
+
+### 3.2 Lemma
+
+$K=k_1k_2$, $H={1\over 2}(k_1+k_2)$
+
+
+
+### 3.3 Remark
+
+The sign of Gaussian curvature at $p$.
+
+//
+
+
+
+### 3.4 Lemma
+
+If $\mathbf{v}, \mathbf{w}\in T_pM$ are linearly independent, then
+
+$S(\mathbf{v})\times S(\mathbf{w})=K(p)(\mathbf{v}\times\mathbf{w})$
+
+$S(\mathbf{v})\times\mathbf{w}+\mathbf{v}\times S(\mathbf{w})=2H(p)(\mathbf{v}\times\mathbf{w})$
+
+### Book
+
+If $V$ and $W$ are vector fields that are linearly independent at each point,
+
+$S(V)\times S(W)=K(V\times W)$
+
+$S(V)\times W+V\times S(W)=2H(V\times W)$ 
+
+
+
+$\displaystyle
+K={(S(V)\times S(W))\cdot(V\times W)\over(V\times W)\cdot(V\times W)}$
+
+$\displaystyle
+H={(S(V)\times W+V\times S(W))\cdot(V\times W)\over2(V\times W)\cdot(V\times W)}$
+
+
+
+$K$ and $H$ are differentiable.
+
+
+
+### 3.5 Corollary
+
+$k_1,k_2=H\pm\sqrt{H^2-K}$
+
+
+
+### 3.6 Definition
+
+$M$ is flat if its Gaussian curvature is zero.
+
+$M$ is minimal if its mean curvature is zero.
+
+
+
+
+
+## 5.4 Computational Techniques
+
+//
