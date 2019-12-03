@@ -9,7 +9,12 @@
 
 $=(L_{ik}L_j^l-L_{ki}L_j^l)+(L_{ji}L_k^l-L_{ij}L_k^l)+(L_{kj}L_i^l-L_{jk}L_i^l)=0$
 
-(c) 
+(c) $R_{imjk}
+=\sum R_{ijk}^lg_{lm}
+=\sum R_{mjk}^lg_{li}
+=-R_{mijk}$
+
+
 
 ## 9.5
 
