@@ -6,6 +6,8 @@
 
 $\mathbb{R}^3$
 
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 a point
 
 ### 1.2 Definition
